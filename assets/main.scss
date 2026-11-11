@@ -3,9 +3,9 @@
 
 @import "minima";
 
-/* 1. 전체 글씨체 및 한글 가독성 최적화 */
+/* 1. 전체 글씨체 나눔고딕 적용 */
 body, h1, h2, h3, h4, h5, h6, p, li, a, span, table, blockquote {
-  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif !important;
+  font-family: "Nanum Gothic", -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif !important;
   letter-spacing: -0.02em;
 }
 
