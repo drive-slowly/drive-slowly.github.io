@@ -1,0 +1,59 @@
+---
+---
+
+@import "minima";
+
+/* 다크모드(어두운 테마) 커스텀 스타일 */
+body {
+  background-color: #16181d !important;
+  color: #e2e8f0 !important;
+}
+
+.site-header {
+  background-color: #1e2128 !important;
+  border-top: 5px solid #3b82f6 !important;
+  border-bottom: 1px solid #2d3748 !important;
+}
+
+.site-title, .site-title:visited, .site-nav .page-link {
+  color: #f8fafc !important;
+}
+
+.post-link, a {
+  color: #60a5fa !important;
+}
+
+.post-link:hover, a:hover {
+  color: #93c5fd !important;
+}
+
+.post-meta, .footer-col-wrapper {
+  color: #94a3b8 !important;
+}
+
+.site-footer {
+  border-top: 1px solid #2d3748 !important;
+  background-color: #16181d !important;
+}
+
+/* 표(Table)와 코드 블록 어둡게 처리 */
+table {
+  color: #e2e8f0 !important;
+  border-color: #334155 !important;
+}
+
+table th {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+table td {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+}
+
+pre, code {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
