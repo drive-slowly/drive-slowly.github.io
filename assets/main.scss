@@ -3,17 +3,22 @@
 
 @import "minima";
 
-/* 1. 전체 글씨체 나눔고딕 적용 */
+/* 1. 프리텐다드(Pretendard) 글씨체 및 숫자 정렬 최적화 */
 body, h1, h2, h3, h4, h5, h6, p, li, a, span, table, blockquote {
-  font-family: "Nanum Gothic", -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif !important;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif !important;
   letter-spacing: -0.02em;
+}
+
+/* 배당 표의 숫자 자릿수를 일정하게 맞춰주는 설정 */
+table td, table th {
+  font-variant-numeric: tabular-nums;
 }
 
 body {
   background-color: #16181d !important;
   color: #e2e8f0 !important;
   line-height: 1.75 !important;
-  word-break: keep-all; /* 한글 단어가 줄 끝에서 어색하게 잘리는 현상 방지 */
+  word-break: keep-all;
 }
 
 /* 2. 다크모드(어두운 테마) 스타일 유지 */
