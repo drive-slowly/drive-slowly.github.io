@@ -70,3 +70,11 @@ pre, code {
   border-color: #334155 !important;
   color: #f1f5f9 !important;
 }
+
+/* 표의 마지막 행(세후 실수령액/합계)만 배경색과 글씨 강조하기 */
+table tbody tr:last-child td {
+  background-color: #1e293b !important; /* 일반 칸(#0f172a)보다 살짝 밝은 남색 톤 */
+  color: #60a5fa !important;            /* 글씨를 은은한 하늘색으로 강조 */
+  font-weight: 700 !important;          /* 글씨 굵게 */
+  border-top: 2px solid #475569 !important; /* 윗줄과 구분되는 두꺼운 경계선 */
+}
