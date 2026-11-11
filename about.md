@@ -14,6 +14,10 @@ permalink: /about/
 ### 투자 원칙 한 줄
 > Do not buy leveraged ETFs unless you're ready.
 
+### 🛠️ 블로그 제작 노트
+* 이 블로그는 GitHub Pages와 Jekyll(`minima` 테마)을 기반으로 제작되었습니다.
+* 눈이 편안한 다크 모드 디자인, 가독성 높은 Pretendard 폰트, 모바일 초고속 로딩 최적화는 **Google AI**의 도움을 받아 함께 세팅했습니다.
+
 ---
 
 *※ 이 블로그의 모든 글은 개인적인 투자 기록과 학습을 위한 메모이며, 특정 종목에 대한 매수·매도 추천이 아닙니다.*
