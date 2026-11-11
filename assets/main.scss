@@ -3,12 +3,23 @@
 
 @import "minima";
 
-/* 다크모드(어두운 테마) 커스텀 스타일 */
+/* 1. 프리텐다드(Pretendard) 웹폰트 불러오기 */
+@import url("https://jsdelivr.net");
+
+/* 2. 전체 글씨체 및 한글 가독성 최적화 */
+body, h1, h2, h3, h4, h5, h6, p, li, a, span, table, blockquote {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif !important;
+  letter-spacing: -0.02em;
+}
+
 body {
   background-color: #16181d !important;
   color: #e2e8f0 !important;
+  line-height: 1.75 !important;
+  word-break: keep-all; /* 한글 단어가 줄 끝에서 어색하게 잘리는 현상 방지 */
 }
 
+/* 3. 다크모드(어두운 테마) 스타일 유지 */
 .site-header {
   background-color: #1e2128 !important;
   border-top: 5px solid #3b82f6 !important;
@@ -36,7 +47,7 @@ body {
   background-color: #16181d !important;
 }
 
-/* 표(Table)와 코드 블록 어둡게 처리 */
+/* 표(Table)와 코드 블록 스타일 */
 table {
   color: #e2e8f0 !important;
   border-color: #334155 !important;
