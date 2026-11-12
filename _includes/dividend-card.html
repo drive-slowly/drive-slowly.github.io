@@ -1,33 +1,50 @@
-{% assign item = site.data.dividends | where: "payment_date", page.payment_date | where: "ticker", page.ticker | first %}
+{% assign items = site.data.dividends | where: "payment_date", page.payment_date | where: "ticker", page.ticker %}
+{% assign first_item = items | first %}
 
-{% if item %}
+{% if first_item %}
+  {% assign total_shares = 0 %}
+  {% assign total_div = 0 %}
+  {% assign total_tax_inc = 0 %}
+  {% assign total_tax_loc = 0 %}
+  {% assign total_net = 0 %}
+  {% assign sec_list = "" | split: "" %}
+
+  {% for item in items %}
+    {% assign total_shares = total_shares | plus: item.shares %}
+    {% assign total_div = total_div | plus: item.dividends %}
+    {% assign total_tax_inc = total_tax_inc | plus: item.tax_income %}
+    {% assign total_tax_loc = total_tax_loc | plus: item.tax_local %}
+    {% assign total_net = total_net | plus: item.net_received %}
+    {% unless sec_list contains item.securities %}
+      {% assign sec_list = sec_list | push: item.securities %}
+    {% endunless %}
+  {% endfor %}
+
 ### 오늘의 배당 기록
-* **종목명:** {{ item.name }} ({{ item.ticker }})
-* **계좌구분:** {{ item.account_type }}
-* **증권사:** {{ item.securities }}
-* **기준일:** {{ item.record_date }}
-* **수량:** {{ item.shares }}주 (주당 {% if item.currency == "USD" %}${% endif %}{{ item.distribution_per_share }}{% if item.currency == "KRW" %}원{% endif %})
+* **종목명:** {{ first_item.name }} ({{ first_item.ticker }})
+* **계좌구분:** {{ first_item.account_type }}
+* **증권사:** {{ sec_list | join: ", " }}
+* **기준일:** {{ first_item.record_date }}
+* **총 수량:** {{ total_shares }}주 (주당 {% if first_item.currency == "USD" %}${% endif %}{{ first_item.distribution_per_share }}{% if first_item.currency == "KRW" %}원{% endif %})
 
-{% if item.currency == "USD" %}
+{% if first_item.currency == "USD" %}
   {% assign rate = page.exchange_rate | default: 1350 %}
 
-  {%- comment -%} 미화 소수점 2자리 고정 {%- endcomment -%}
-  {% assign div_cents = item.dividends | times: 100 | round %}
+  {% assign div_cents = total_div | times: 100 | round %}
   {% assign div_int = div_cents | divided_by: 100 %}
   {% assign div_dec = div_cents | modulo: 100 | plus: 100 | slice: 1, 2 %}
 
-  {% assign tax_cents = item.tax_income | times: 100 | round %}
+  {% assign tax_cents = total_tax_inc | times: 100 | round %}
   {% assign tax_int = tax_cents | divided_by: 100 %}
   {% assign tax_dec = tax_cents | modulo: 100 | plus: 100 | slice: 1, 2 %}
 
-  {% assign net_cents = item.net_received | times: 100 | round %}
+  {% assign net_cents = total_net | times: 100 | round %}
   {% assign net_int = net_cents | divided_by: 100 %}
   {% assign net_dec = net_cents | modulo: 100 | plus: 100 | slice: 1, 2 %}
 
-  {%- comment -%} 원화 환산 및 천 단위 콤마 {%- endcomment -%}
-  {% assign krw_div = item.dividends | times: rate | round %}
-  {% assign krw_tax = item.tax_income | times: rate | round %}
-  {% assign krw_net = item.net_received | times: rate | round %}
+  {% assign krw_div = total_div | times: rate | round %}
+  {% assign krw_tax = total_tax_inc | times: rate | round %}
+  {% assign krw_net = total_net | times: rate | round %}
 
 | 항목 | 미화 | 원화 | 비고 |
 | :--- | ---: | ---: | :--- |
@@ -37,12 +54,24 @@
 
 {% else %}
 
-| 항목 | 금액 | 비고 |
+| 항목 | 합계 금액 | 비고 |
 | :--- | ---: | :--- |
-| **세전 배당금** | {% if item.dividends >= 1000 %}{{ item.dividends | divided_by: 1000 | floor }},{{ item.dividends | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ item.dividends }}{% endif %}원 | 배당금 지급 |
-| **소득세 (14%)** | {% if item.tax_income >= 1000 %}{{ item.tax_income | divided_by: 1000 | floor }},{{ item.tax_income | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ item.tax_income }}{% endif %}원 | 원천징수 |
-| **지방세 (1.4%)** | {% if item.tax_local >= 1000 %}{{ item.tax_local | divided_by: 1000 | floor }},{{ item.tax_local | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ item.tax_local }}{% endif %}원 | 원천징수 |
-| **세후 실수령액** | **{% if item.net_received >= 1000 %}{{ item.net_received | divided_by: 1000 | floor }},{{ item.net_received | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ item.net_received }}{% endif %}원** | 실수령액 |
+| **세전 배당금** | {% if total_div >= 1000 %}{{ total_div | divided_by: 1000 | floor }},{{ total_div | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ total_div }}{% endif %}원 | 배당금 지급 |
+| **소득세 (14%)** | {% if total_tax_inc >= 1000 %}{{ total_tax_inc | divided_by: 1000 | floor }},{{ total_tax_inc | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ total_tax_inc }}{% endif %}원 | 원천징수 |
+| **지방세 (1.4%)** | {% if total_tax_loc >= 1000 %}{{ total_tax_loc | divided_by: 1000 | floor }},{{ total_tax_loc | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ total_tax_loc }}{% endif %}원 | 원천징수 |
+| **세후 실수령액** | **{% if total_net >= 1000 %}{{ total_net | divided_by: 1000 | floor }},{{ total_net | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ total_net }}{% endif %}원** | 실수령액 |
+
+{% if items.size > 1 %}
+#### 증권사별 상세 내역
+
+| 증권사 | 보유 수량 | 세전 배당금 | 세금 합계 | 세후 실수령액 |
+| :--- | ---: | ---: | ---: | ---: |
+{% for item in items %}
+  {% assign row_tax = item.tax_income | plus: item.tax_local %}
+
+| {{ item.securities }} | {{ item.shares }}주 | {% if item.dividends >= 1000 %}{{ item.dividends | divided_by: 1000 | floor }},{{ item.dividends | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ item.dividends }}{% endif %}원 | {% if row_tax >= 1000 %}{{ row_tax | divided_by: 1000 | floor }},{{ row_tax | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ row_tax }}{% endif %}원 | **{% if item.net_received >= 1000 %}{{ item.net_received | divided_by: 1000 | floor }},{{ item.net_received | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ item.net_received }}{% endif %}원** |
+{% endfor %}
+{% endif %}
 
 {% endif %}
 {% endif %}
