@@ -1,0 +1,25 @@
+- record_date: "2026-10-30"
+  payment_date: "2026-11-03"
+  ticker: "472150"
+  name: "TIGER 배당커버드콜액티브"
+  account_type: "General Brokerage"
+  currency: "KRW"
+  shares: 261           #기준일 보유 주식 수
+  distribution_per_share: 325 #주당 배당금
+  dividends: 84825       # 세전 배당금
+  tax_income: 3010       # 배당소득세
+  tax_local: 300        # 주민세
+  net_received: 81515     # 세후 배당금
+
+- record_date: "2026-10-09"
+  payment_date: "2026-11-11"
+  ticker: "AXP"
+  name: "아메리칸 익스프레스"
+  account_type: "General Brokerage"
+  currency: "USD"
+  shares: 32           #기준일 보유 주식 수
+  distribution_per_share: 0.95 #주당 배당금
+  dividends: 30.40       # 세전 배당금
+  tax_income: 4.56       # 배당소득세
+  tax_local: 0          # 주민세
+  net_received: 25.84     # 세후 배당금
