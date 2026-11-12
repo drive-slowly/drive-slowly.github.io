@@ -2,7 +2,8 @@
   payment_date: "2026-11-03"
   ticker: "472150"
   name: "TIGER 배당커버드콜액티브"
-  account_type: "General Brokerage"
+  account_type: "일반 위탁"
+  securities: "우리투자증권"
   currency: "KRW"
   shares: 261           #기준일 보유 주식 수
   distribution_per_share: 325 #주당 배당금
@@ -15,7 +16,8 @@
   payment_date: "2026-11-11"
   ticker: "AXP"
   name: "아메리칸 익스프레스"
-  account_type: "General Brokerage"
+  account_type: "일반 위탁"
+  securities: "메리츠증권"
   currency: "USD"
   shares: 32           #기준일 보유 주식 수
   distribution_per_share: 0.95 #주당 배당금
