@@ -33,7 +33,7 @@
 | :--- | ---: | ---: | :--- |
 | **세전 배당금** | ${{ div_int }}.{{ div_dec }} | 약 {% if krw_div >= 1000 %}{{ krw_div | divided_by: 1000 | floor }},{{ krw_div | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ krw_div }}{% endif %}원 | 배당 지급 |
 | **소득세 (15%)** | ${{ tax_int }}.{{ tax_dec }} | 약 {% if krw_tax >= 1000 %}{{ krw_tax | divided_by: 1000 | floor }},{{ krw_tax | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ krw_tax }}{% endif %}원 | 미국 현지 원천징수 |
-| **세후 실수령액** | **${{ net_int }}.{{ net_dec }}** | **약 {% if krw_net >= 1000 %}{{ krw_net | divided_by: 1000 | floor }},{{ krw_net | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ krw_net }}{% endif %}원** | (환율 {{ rate }}원) |
+| **세후 실수령액** | **${{ net_int }}.{{ net_dec }}** | **약 {% if krw_net >= 1000 %}{{ krw_net | divided_by: 1000 | floor }},{{ krw_net | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ krw_net }}{% endif %}원** | (환율 {% if rate >= 1000 %}{{ rate | divided_by: 1000 | floor }},{{ rate | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ rate }}{% endif %}원) |
 
 {% else %}
 
