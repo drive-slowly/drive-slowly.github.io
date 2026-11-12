@@ -25,3 +25,31 @@
   tax_income: 4.56       # 배당소득세
   tax_local: 0          # 주민세
   net_received: 25.84     # 세후 배당금
+
+# - record_date: "2026-11-13"
+#   payment_date: "2026-11-17"
+#   ticker: "0094M0"
+#   name: "RISE 코리아밸류업위클리고정커버드콜"
+#   account_type: "일반 위탁"
+#   securities: "우리투자증권"
+#   currency: "KRW"
+#   shares: 306           #기준일 보유 주식 수
+#   distribution_per_share: 420 #주당 배당금
+#   dividends: 128520       # 세전 배당금
+#   tax_income:        # 배당소득세
+#   tax_local:         # 주민세
+#   net_received:      # 세후 배당금
+
+#   - record_date: "2026-11-13"
+#   payment_date: "2026-11-17"
+#   ticker: "0094M0"
+#   name: "RISE 코리아밸류업위클리고정커버드콜"
+#   account_type: "일반 위탁"
+#   securities: "KB증권"
+#   currency: "KRW"
+#   shares: 76           #기준일 보유 주식 수
+#   distribution_per_share: 420 #주당 배당금
+#   dividends: 31920       # 세전 배당금
+#   tax_income:        # 배당소득세
+#   tax_local:         # 주민세
+#   net_received:      # 세후 배당금
