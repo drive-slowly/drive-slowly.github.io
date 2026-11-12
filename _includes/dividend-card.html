@@ -1,0 +1,32 @@
+{% assign item = site.data.dividends | where: "payment_date", page.payment_date | where: "ticker", page.ticker | first %}
+
+{% if item %}
+### 오늘의 배당 기록
+* **종목명:** {{ item.name }} ({{ item.ticker }})
+* **계좌구분:** {{ item.account_type }}
+* **기준일:** {{ item.record_date }}
+* **수량:** {{ item.shares }}주 (주당 {% if item.currency == "USD" %}${% endif %}{{ item.distribution_per_share }}{% if item.currency == "KRW" %}원{% endif %})
+
+{% if item.currency == "USD" %}
+  {% assign rate = page.exchange_rate | default: 1350 %}
+  {% assign krw_div = item.dividends | times: rate | round %}
+  {% assign krw_tax = item.tax_income | times: rate | round %}
+  {% assign krw_net = item.net_received | times: rate | round %}
+
+| 항목 | 미화 | 원화 (환율 {{ rate }}원) | 비고 |
+| :--- | ---: | ---: | :--- |
+| **세전 배당금** | ${{ item.dividends }} | 약 {{ krw_div }}원 | 배당 지급 |
+| **배당소득세 (15%)** | ${{ item.tax_income }} | 약 {{ krw_tax }}원 | 미국 현지 원천징수 |
+| **세후 실수령액** | **${{ item.net_received }}** | **약 {{ krw_net }}원** | 실수령액 |
+
+{% else %}
+  {% assign total_tax = item.tax_income | plus: item.tax_local %}
+
+| 항목 | 금액 (원화) | 비고 |
+| :--- | ---: | :--- |
+| **세전 배당금** | {{ item.dividends }}원 | 분배금 지급 |
+| **세금 (소득세+지방세)** | {{ total_tax }}원 | 원천징수 |
+| **세후 실수령액** | **{{ item.net_received }}원** | 실수령액 |
+
+{% endif %}
+{% endif %}
