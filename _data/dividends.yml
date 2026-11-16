@@ -1,4 +1,32 @@
 - record_date: "2026-10-30"
+  payment_date: "2026-11-02"
+  ticker: "497880"
+  name: "SOL CD금리&머니마켓액티브"
+  account_type: "ISA"
+  securities: "KB증권"
+  currency: "KRW"
+  shares: 2           #기준일 보유 주식 수
+  distribution_per_share: 160 #주당 배당금
+  dividends: 320       # 세전 배당금
+  tax_income: 0       # 배당소득세
+  tax_local: 0        # 주민세
+  net_received: 320     # 세후 배당금
+
+- record_date: "2026-10-30"
+  payment_date: "2026-11-03"
+  ticker: "0174B0"
+  name: "KoAct 글로벌AI메모리반도체액티브"
+  account_type: "ISA"
+  securities: "KB증권"
+  currency: "KRW"
+  shares: 381           #기준일 보유 주식 수
+  distribution_per_share: 3 #주당 배당금
+  dividends: 1143       # 세전 배당금
+  tax_income: 0       # 배당소득세
+  tax_local: 0        # 주민세
+  net_received: 1143     # 세후 배당금
+
+- record_date: "2026-10-30"
   payment_date: "2026-11-03"
   ticker: "472150"
   name: "TIGER 배당커버드콜액티브"
@@ -26,6 +54,20 @@
   tax_local: 0          # 주민세
   net_received: 25.84     # 세후 배당금
 
+- record_date: "2026-11-13"
+  payment_date: "2026-11-16"
+  ticker: "0105E0"
+  name: "SOL 코리아고배당"
+  account_type: "ISA"
+  securities: "KB증권"
+  currency: "KRW"
+  shares: 32           #기준일 보유 주식 수
+  distribution_per_share: 60 #주당 배당금
+  dividends: 1920       # 세전 배당금
+  tax_income: 0       # 배당소득세
+  tax_local: 0        # 주민세
+  net_received: 1920     # 세후 배당금
+
 # - record_date: "2026-11-13"
 #   payment_date: "2026-11-17"
 #   ticker: "0094M0"
@@ -36,9 +78,9 @@
 #   shares: 306           #기준일 보유 주식 수
 #   distribution_per_share: 420 #주당 배당금
 #   dividends: 128520       # 세전 배당금
-#   tax_income:        # 배당소득세
-#   tax_local:         # 주민세
-#   net_received:      # 세후 배당금
+#   tax_income: 0       # 배당소득세
+#   tax_local: 0        # 주민세
+#   net_received: 128520     # 세후 배당금
 
 #   - record_date: "2026-11-13"
 #   payment_date: "2026-11-17"
