@@ -67,11 +67,11 @@
 
 | 증권사 | 보유 수량 | 세전 배당금 | 세금 합계 | 세후 실수령액 |
 | :--- | ---: | ---: | ---: | ---: |
-{% for item in items %}
-  {% assign row_tax = item.tax_income | plus: item.tax_local %}
+{%- for item in items -%}
+{%- assign row_tax = item.tax_income | plus: item.tax_local -%}
 
 | {{ item.securities }} | {{ item.shares }}주 | {% if item.dividends >= 1000 %}{{ item.dividends | divided_by: 1000 | floor }},{{ item.dividends | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ item.dividends }}{% endif %}원 | {% if row_tax >= 1000 %}{{ row_tax | divided_by: 1000 | floor }},{{ row_tax | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ row_tax }}{% endif %}원 | **{% if item.net_received >= 1000 %}{{ item.net_received | divided_by: 1000 | floor }},{{ item.net_received | modulo: 1000 | plus: 1000 | slice: 1, 3 }}{% else %}{{ item.net_received }}{% endif %}원** |
-{% endfor %}
+{%- endfor -%}
 
 {% endif %}
 
