@@ -92,6 +92,6 @@
   shares: 76           #기준일 보유 주식 수
   distribution_per_share: 420 #주당 배당금
   dividends: 31920       # 세전 배당금
-  tax_income:        # 배당소득세
-  tax_local:         # 주민세
-  net_received:      # 세후 배당금
+  tax_income: 0       # 배당소득세
+  tax_local: 0        # 주민세
+  net_received: 31920     # 세후 배당금
