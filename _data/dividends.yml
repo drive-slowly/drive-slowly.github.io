@@ -1,16 +1,30 @@
-- record_date: "2026-11-13"
-  payment_date: "2026-11-17"
-  ticker: "0094M0"
-  name: "RISE 코리아밸류업위클리고정커버드콜"
+- record_date: "2026-11-09"
+  payment_date: "2026-11-20"
+  ticker: "086790"
+  name: "하나금융지주"
   account_type: "일반 위탁"
-  securities: "우리투자증권"
+  securities: "교보증권"
   currency: "KRW"
-  shares: 306           #기준일 보유 주식 수
-  distribution_per_share: 420 #주당 배당금
-  dividends: 128520       # 세전 배당금
+  shares: 1           #기준일 보유 주식 수
+  distribution_per_share: 1165 #주당 배당금
+  dividends: 1165       # 세전 배당금
   tax_income: 0       # 배당소득세
   tax_local: 0        # 주민세
-  net_received: 128520     # 세후 배당금
+  net_received: 1165     # 세후 배당금
+
+- record_date: "2026-11-09"
+  payment_date: "2026-11-20"
+  ticker: "086790"
+  name: "하나금융지주"
+  account_type: "일반 위탁"
+  securities: "SK증권"
+  currency: "KRW"
+  shares: 5           #기준일 보유 주식 수
+  distribution_per_share: 1165 #주당 배당금
+  dividends: 5825       # 세전 배당금
+  tax_income: 0       # 배당소득세
+  tax_local: 0        # 주민세
+  net_received: 5825     # 세후 배당금
 
 - record_date: "2026-11-13"
   payment_date: "2026-11-17"
