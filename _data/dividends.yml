@@ -49,7 +49,7 @@
   currency: "KRW"
   shares: 0.02           #기준일 보유 주식 수
   distribution_per_share: 150 #주당 배당금
-  dividends: 150       # 세전 배당금
+  dividends: 3       # 세전 배당금
   tax_income: 0       # 배당소득세
   tax_local: 0        # 주민세
   net_received: 3    # 세후 배당금
