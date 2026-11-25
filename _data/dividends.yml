@@ -1,3 +1,74 @@
+- record_date: "2026-11-10"
+  payment_date: "2026-11-25"
+  ticker: "138930"
+  name: "BNK금융지주"
+  account_type: "일반 위탁"
+  securities: "SK증권"
+  currency: "KRW"
+  shares: 37           #기준일 보유 주식 수
+  distribution_per_share: 150 #주당 배당금
+  dividends: 5550       # 세전 배당금
+  tax_income: 0       # 배당소득세
+  tax_local: 0        # 주민세
+  net_received: 5550    # 세후 배당금
+
+- record_date: "2026-11-10"
+  payment_date: "2026-11-25"
+  ticker: "138930"
+  name: "BNK금융지주"
+  account_type: "일반 위탁"
+  securities: "하나증권"
+  currency: "KRW"
+  shares: 24           #기준일 보유 주식 수
+  distribution_per_share: 150 #주당 배당금
+  dividends: 3600       # 세전 배당금
+  tax_income: 0       # 배당소득세
+  tax_local: 0        # 주민세
+  net_received: 3600    # 세후 배당금
+
+- record_date: "2026-11-10"
+  payment_date: "2026-11-25"
+  ticker: "138930"
+  name: "BNK금융지주"
+  account_type: "일반 위탁"
+  securities: "키움증권"
+  currency: "KRW"
+  shares: 1           #기준일 보유 주식 수
+  distribution_per_share: 150 #주당 배당금
+  dividends: 150       # 세전 배당금
+  tax_income: 0       # 배당소득세
+  tax_local: 0        # 주민세
+  net_received: 150    # 세후 배당금
+
+- record_date: "2026-11-10"
+  payment_date: "2026-11-25"
+  ticker: "138930"
+  name: "BNK금융지주"
+  account_type: "일반 위탁"
+  securities: "키움증권"
+  currency: "KRW"
+  shares: 0.02           #기준일 보유 주식 수
+  distribution_per_share: 150 #주당 배당금
+  dividends: 150       # 세전 배당금
+  tax_income: 0       # 배당소득세
+  tax_local: 0        # 주민세
+  net_received: 3    # 세후 배당금
+
+- record_date: "2026-11-10"
+  payment_date: "2026-11-25"
+  ticker: "138930"
+  name: "BNK금융지주"
+  account_type: "일반 위탁"
+  securities: "교보증권"
+  currency: "KRW"
+  shares: 1           #기준일 보유 주식 수
+  distribution_per_share: 150 #주당 배당금
+  dividends: 150       # 세전 배당금
+  tax_income: 0       # 배당소득세
+  tax_local: 0        # 주민세
+  net_received: 150    # 세후 배당금
+
+
 - record_date: "2026-11-09"
   payment_date: "2026-11-20"
   ticker: "086790"
