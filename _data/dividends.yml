@@ -1,3 +1,87 @@
+- record_date: "2026-11-03"
+  payment_date: "2026-11-27"
+  ticker: "055550"
+  name: "신한지주"
+  account_type: "일반 위탁"
+  securities: "SK증권"
+  currency: "KRW"
+  shares: 5           #기준일 보유 주식 수
+  distribution_per_share: 740 #주당 배당금
+  dividends: 3700       # 세전 배당금
+  tax_income: 0       # 배당소득세
+  tax_local: 0        # 주민세
+  net_received: 3700    # 세후 배당금
+
+- record_date: "2026-11-03"
+  payment_date: "2026-11-27"
+  ticker: "055550"
+  name: "신한지주"
+  account_type: "일반 위탁"
+  securities: "교보증권"
+  currency: "KRW"
+  shares: 1           #기준일 보유 주식 수
+  distribution_per_share: 740 #주당 배당금
+  dividends: 740       # 세전 배당금
+  tax_income: 0       # 배당소득세
+  tax_local: 0        # 주민세
+  net_received: 740    # 세후 배당금
+
+- record_date: "2026-11-03"
+  payment_date: "2026-11-27"
+  ticker: "055550"
+  name: "신한지주"
+  account_type: "일반 위탁"
+  securities: "삼성증권"
+  currency: "KRW"
+  shares: 1           #기준일 보유 주식 수
+  distribution_per_share: 740 #주당 배당금
+  dividends: 740       # 세전 배당금
+  tax_income: 0       # 배당소득세
+  tax_local: 0        # 주민세
+  net_received: 740    # 세후 배당금
+
+- record_date: "2026-11-12"
+  payment_date: "2026-11-27"
+  ticker: "105560"
+  name: "KB금융"
+  account_type: "일반 위탁"
+  securities: "SK증권"
+  currency: "KRW"
+  shares: 4           #기준일 보유 주식 수
+  distribution_per_share: 1167 #주당 배당금
+  dividends: 4668       # 세전 배당금
+  tax_income: 0       # 배당소득세
+  tax_local: 0        # 주민세
+  net_received: 4668    # 세후 배당금
+
+- record_date: "2026-11-12"
+  payment_date: "2026-11-27"
+  ticker: "105560"
+  name: "KB금융"
+  account_type: "일반 위탁"
+  securities: "SK증권"
+  currency: "KRW"
+  shares: 4           #기준일 보유 주식 수
+  distribution_per_share: 1167 #주당 배당금
+  dividends: 4668       # 세전 배당금
+  tax_income: 0       # 배당소득세
+  tax_local: 0        # 주민세
+  net_received: 4668    # 세후 배당금
+
+- record_date: "2026-11-12"
+  payment_date: "2026-11-27"
+  ticker: "105560"
+  name: "KB금융"
+  account_type: "일반 위탁"
+  securities: "교보증권"
+  currency: "KRW"
+  shares: 1           #기준일 보유 주식 수
+  distribution_per_share: 1167 #주당 배당금
+  dividends: 1667       # 세전 배당금
+  tax_income: 0       # 배당소득세
+  tax_local: 0        # 주민세
+  net_received: 1667    # 세후 배당금  
+
 - record_date: "2026-11-10"
   payment_date: "2026-11-25"
   ticker: "138930"
